@@ -1,5 +1,4 @@
 import flask
-
 from app import app
 from models import User
 
@@ -67,4 +66,4 @@ class TestApp:
             logged_out_json = logged_out_response.get_json()
 
             assert(logged_out_response.status_code == 401)
-            assert(logged_out_json == {})
+            assert(logged_out_json == {'error': 'Unauthorized'})
